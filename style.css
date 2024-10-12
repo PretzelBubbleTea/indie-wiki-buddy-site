@@ -1,26 +1,44 @@
 /* Element styling */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  background: #005799;
+  font-family: "Itim", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  background: #2941FF;
   margin-top: 20px;
 }
 
 h1 {
   font-size: 2.3em;
+  font-family: "Poetsen One", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #2941FF;
+}
+
+h2 {
+  font-size: 2.3em;
+  font-family: "Poetsen One", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #2941FF;
+}
+
+.subtitle {
+  font-size: 2.3em;
+  font-family: "Poetsen One", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #2941FF;
 }
 
 a {
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
+  color: #2941FF;
 }
 
 table {
-  border: 2px solid #eee;
+  border: 2px solid #D6F0FF;
 }
 
 th {
   text-align: left;
-  background-color: #eee;
+  background-color: #D6F0FF;
 }
 
 th,
@@ -70,7 +88,8 @@ td {
 }
 
 .button {
-  background-color: #005799;
+  background-color: #0063FF;
+  font-family: "Poetsen One", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   border: none;
   border-radius: 15px;
   color: white;
@@ -87,7 +106,7 @@ td {
 }
 
 .button:hover {
-  background-color: #00467a;
+  background-color: #2941FF;
 }
 
 .button[disabled] {
@@ -144,7 +163,7 @@ ul.padded {
 
 .display>img {
   margin: 0 auto;
-  border: 10px solid #005699;
+  border: 10px solid #2941FF;
   border-radius: 20px;
   max-width: 400px;
   width: 90%;
@@ -289,4 +308,100 @@ div.scroll abbr {
   to {
     transform: translateX(0%);
   }
+}
+
+.comparison {
+  position: absolute;
+  height: 500px;
+  width: 750px;
+  overflow: hidden;
+  background: #fff;
+  border: 7px solid #fff;
+  border-radius: 15px;
+}
+.comparison .images {
+  height: 475px;
+  width: 960px;
+  display: flex;
+}
+.comparison .images .img-1 {
+  height: 100%;
+  width: 100%;
+  background: url("img/slider/kirby-fandom-wiki.png") no-repeat;
+}
+.comparison .images .img-2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url("img/slider/wikirby.png") no-repeat;
+}
+.comparison .slider {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.comparison .slider input {
+  width: 100%;
+  outline: none;
+  background: none;
+}
+.slider input::-webkit-slider-thumb {
+  height: 486px;
+  width: 5px;
+  background: none;
+  -webkit-appearance: none;
+  cursor: col-resize;
+}
+.slider .drag-line {
+  width: 5px;
+  height: 486px;
+  position: absolute;
+  left: 49.85%;
+  pointer-events: none;
+}
+.slider .drag-line::before,
+.slider .drag-line::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 222px;
+  background: #2941FF;
+}
+.slider .drag-line::before {
+  top: 0;
+}
+.slider .drag-line::after {
+  bottom: 0;
+}
+.slider .drag-line span {
+  height: 42px;
+  width: 42px;
+  border: 3px solid #2941FF;
+  background-color: #D6F0FF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.slider .drag-line span::before,
+.slider .drag-line span::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  border: 10px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.slider .drag-line span::before {
+  left: 40%;
+  border-left-color: #2941FF;
+  background-color: #D6F0FF;
+}
+.slider .drag-line span::after {
+  left: 60%;
+  border-top-color: #2941FF;
+  background-color: #D6F0FF;
 }
